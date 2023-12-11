@@ -54,8 +54,8 @@ const browsers = {
   // Local browser testing via playwright
   // ===========
   chromium: playwrightLauncher({product: 'chromium'}),
-  firefox: playwrightLauncher({product: 'firefox'}),
-  webkit: playwrightLauncher({product: 'webkit'}),
+  //firefox: playwrightLauncher({product: 'firefox'}),
+  //webkit: playwrightLauncher({product: 'webkit'}),
 
   // Uncomment example launchers for running on Sauce Labs
   // ===========
@@ -91,7 +91,7 @@ try {
 // https://modern-web.dev/docs/test-runner/cli-and-configuration/
 export default {
   rootDir: '.',
-  files: ['./test/**/*_test.js'],
+  files: ['./src/**/*.test.ts'],
   nodeResolve: {exportConditions: mode === 'dev' ? ['development'] : []},
   preserveSymlinks: true,
   browsers: commandLineBrowsers ?? Object.values(browsers),

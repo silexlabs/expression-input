@@ -3,7 +3,6 @@ name: Run tests
 on:
   push:
     branches: [ '**' ]
-    tags: [ '**' ]
   pull_request:
     branches: [ '**' ]
 

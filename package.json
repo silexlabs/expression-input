@@ -18,7 +18,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "tsc && $npm_execpath run bundle",
+    "build": "tsc && yarn bundle",
     "build:watch": "tsc --watch",
     "bundle": "rollup -c",
     "clean": "rimraf dist/expression-input.{d.ts,d.ts.map,js,js.map} dist/test/expression-input.{d.ts,d.ts.map,js,js.map} dist/test/expression-input.{d.ts,d.ts.map,js,js.map}",

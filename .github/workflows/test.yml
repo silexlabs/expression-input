@@ -18,7 +18,7 @@ jobs:
         cache: 'yarn'
     - name: Install dependencies
       run: yarn install --frozen-lockfile
-    - run: yarn run build --if-present
+    - run: if jq -e ".scripts.build" package.json >/dev/null 2>&1; then yarn run build; fi
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests

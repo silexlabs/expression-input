@@ -16,7 +16,7 @@ jobs:
           node-version: 24
           cache: 'yarn'
       - run: yarn install --frozen-lockfile
-      - run: yarn run build --if-present
+      - run: if jq -e ".scripts.build" package.json >/dev/null 2>&1; then yarn run build; fi
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run Playwright tests
@@ -43,7 +43,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
           cache: 'yarn'
       - run: yarn install --frozen-lockfile
-      - run: yarn run build --if-present
+      - run: if jq -e ".scripts.build" package.json >/dev/null 2>&1; then yarn run build; fi
       - name: Extract npm tag
         id: version
         run: |
